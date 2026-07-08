@@ -32,7 +32,7 @@ app/
 
 ## Local Development
 
-Use Node `20.10.0` or newer.
+Use Node 20.
 
 ```bash
 npm install
@@ -58,6 +58,6 @@ Recommended Vercel settings:
 - Install command: `npm ci`
 - Build command: `npm run build`
 - Output directory: `dist`
-- Node version: `20.10.0` or newer
+- Node version: `20.x`
 
 No environment variables are required for the current static site.
