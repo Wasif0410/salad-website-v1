@@ -13,14 +13,14 @@ type IncludedScrollCardProps = {
 
 function createKeyframes(index: number, isMobile: boolean) {
   const compactOffset = isMobile ? 13 : 18;
-  const activeY = isMobile ? 8 : -58;
-  const exitY = isMobile ? -540 : -620;
-  const holdAt = 0.16;
-  const step = 0.2;
+  const activeY = isMobile ? 4 : -58;
+  const exitY = isMobile ? -430 : -620;
+  const holdAt = isMobile ? 0.1 : 0.16;
+  const step = isMobile ? 0.215 : 0.2;
   const activeAt = holdAt + index * step;
   const prepAt = Math.max(0, activeAt - 0.045);
-  const exitAt = activeAt + 0.12;
-  const goneAt = Math.min(0.98, exitAt + 0.09);
+  const exitAt = activeAt + (isMobile ? 0.17 : 0.12);
+  const goneAt = Math.min(isMobile ? 0.995 : 0.98, exitAt + (isMobile ? 0.08 : 0.09));
   const deckOffset = Math.max(0, index);
   const deckX = compactOffset * deckOffset;
   const deckY = activeY + compactOffset * Math.min(deckOffset, 3);
@@ -103,12 +103,19 @@ export default function IncludedScrollCard({
         alt={title}
         className="absolute inset-0 w-full h-full object-cover"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/40 to-transparent" />
-      <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6">
-        <h3 className="font-display text-cream text-[24px] leading-8">
+      <div className="absolute inset-0 bg-gradient-to-t from-[#0d120b]/95 via-[#0d120b]/55 to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 p-5 md:p-7">
+        <h3 className="font-display text-cream text-[27px] leading-[31px] md:text-[34px] md:leading-[38px]">
           {title}
         </h3>
-        <p className="mt-2 text-cream-dark text-[14px] leading-[22.75px]">
+        <p
+          className="mt-2 text-cream-dark text-[14px] leading-[20px] md:mt-2.5 md:text-[16px] md:leading-[24px] overflow-hidden"
+          style={{
+            display: '-webkit-box',
+            WebkitBoxOrient: 'vertical',
+            WebkitLineClamp: 3,
+          }}
+        >
           {description}
         </p>
       </div>

@@ -1,119 +1,122 @@
-export const introImages = [
-  '/images/intro-1.jpg',
-  '/images/intro-2.jpg',
-  '/images/intro-3.jpg',
-  '/images/intro-4.jpg',
-] as const;
-
 export const experiences = [
   {
     number: '001',
-    title: 'The Science of Sourdough',
+    title: 'Take Your Placement Test',
     description:
-      'Master fermentation, hydration, and heat through guided dough work and live-fire baking. Learn why dough behaves the way it does, not just how to follow a recipe.',
-    image: '/images/exp-001.jpg',
+      'Answer a quick 10-minute adaptive assessment. SALAD measures reading, listening, and grammar to pinpoint your exact CEFR level so you always start in the right place.',
+    details: [
+      '10 minutes - fully online',
+      'Adaptive difficulty - no guesswork',
+      'Instant CEFR level result from A1 to C1',
+    ],
+    visual: {
+      kind: 'assessment',
+      url: 'frenchsalad.ca/assessment',
+    },
   },
   {
     number: '002',
-    title: 'The Tuscan Market Immersion',
+    title: 'Get Matched to Your Class',
     description:
-      "Walk the local markets with a chef's eye. Source flour, tomatoes, and basil directly from the people who grow and make them.",
-    image: '/images/exp-002.jpg',
+      'Based on your level and availability, SALAD places you in a small group taught by a certified native teacher. Every schedule, every goal - there is a class that fits.',
+    details: [
+      'Small groups of 4-8 students',
+      'Native-speaking certified teachers',
+      'Morning, evening, and weekend options',
+    ],
+    visual: {
+      kind: 'classes',
+      url: 'frenchsalad.ca/classes',
+    },
   },
   {
     number: '003',
-    title: 'Private Wood-Fired Sessions',
+    title: 'Learn Live with Native Teachers',
     description:
-      'Hands-on oven time with direct, personal feedback. No demonstrations. No spectators. We make sure every participant works the fire.',
-    image: '/images/exp-003.jpg',
+      'Join interactive video lessons from anywhere. Practice speaking, get real-time corrections, track your CEFR progress, and build confidence to speak French naturally.',
+    details: [
+      'Live video lessons - speak every class',
+      'Instant grammar and pronunciation feedback',
+      'Progress dashboard tracks your CEFR growth',
+    ],
+    visual: {
+      kind: 'classroom',
+      url: 'frenchsalad.ca/classroom',
+    },
   },
   {
     number: '004',
-    title: 'Sunset Estate Dinner',
+    title: 'Practice, Feedback & Progress',
     description:
-      'An intimate dinner featuring your own creations, shared at a private Tuscan estate with all the participants as the sun goes down.',
-    image: '/images/exp-004.jpg',
-  },
-  {
-    number: '005',
-    title: 'From Technique to Instinct',
-    description:
-      'Move beyond measurements and timers. Learn to read dough, feel fermentation, and work with confidence under real conditions.',
-    image: '/images/exp-005.jpg',
+      "Get regular feedback, track your progress, and build confidence every step. Your dashboard shows exactly how far you have come - and what to focus on next.",
+    details: [
+      'Detailed skill scores after every lesson',
+      'Teacher feedback on grammar and pronunciation',
+      'CEFR progress tracker toward your next level',
+    ],
+    visual: {
+      kind: 'dashboard',
+      url: 'frenchsalad.ca/dashboard',
+    },
   },
 ] as const;
 
 export const includedItems = [
   {
-    title: 'Accommodation',
+    title: 'Confidence',
     description:
-      'Two nights in a secluded countryside estate, shared only with fellow participants.',
-    image: '/images/incl-accommodation.jpg',
+      'Speak with less hesitation and build comfort using the language in real situations.',
+    image: '/images/why-salad/confidence.png',
   },
   {
-    title: 'Materials',
-    description: 'Every session, ingredient, tool, and resource is provided.',
-    image: '/images/incl-materials.jpg',
-  },
-  {
-    title: 'Culinary',
+    title: 'Clarity',
     description:
-      'Private estate dinners, local wine pairings, and a guided market immersion with regional producers',
-    image: '/images/incl-culinary.jpg',
+      'Know what to focus on next instead of feeling lost in grammar, vocabulary, or pronunciation.',
+    image: '/images/why-salad/clarity.png',
   },
   {
-    title: 'Personal Guidance',
-    description: 'Direct access to the maestro throughout the experience.',
-    image: '/images/incl-guidance.jpg',
+    title: 'Belonging',
+    description:
+      'Learn in a supportive environment where mistakes are part of the process, not something to fear.',
+    image: '/images/why-salad/belonging.png',
   },
-] as const;
-
-export const galleryRows = [
-  [
-    '/images/gallery-1.jpg',
-    '/images/gallery-2.jpg',
-    '/images/gallery-3.jpg',
-    '/images/gallery-4.jpg',
-    '/images/gallery-5.jpg',
-  ],
-  [
-    '/images/gallery-6.jpg',
-    '/images/gallery-7.jpg',
-    '/images/gallery-8.jpg',
-    '/images/gallery-9.jpg',
-    '/images/gallery-10.jpg',
-  ],
+  {
+    title: 'Consistency',
+    description:
+      'Build steady habits with lessons that keep you practicing, improving, and coming back.',
+    image: '/images/why-salad/consistency.png',
+  },
 ] as const;
 
 export const faqs = [
   {
-    question: 'Who is this for?',
+    question: 'How do I know which level to start with?',
     answer:
-      'This experience is designed for serious culinary enthusiasts, professional chefs, artisan bakers, and anyone who wants to deeply understand sourdough craftsmanship.',
+      'SALAD starts with a short placement assessment so we can understand your current CEFR level, goals, and confidence with speaking, listening, grammar, and vocabulary.',
   },
   {
-    question: 'How many people attend each edition?',
+    question: 'Do you offer beginner and advanced classes?',
     answer:
-      'We intentionally limit each edition to 12 participants to ensure personalized attention and an intimate learning environment.',
+      'Yes. Learners can join from beginner foundations through advanced conversation and professional communication. The goal is to place you where the pace feels challenging but manageable.',
   },
   {
-    question: 'Is accommodation included?',
+    question: 'Are classes live or self-paced?',
     answer:
-      "Yes, two nights in a private countryside estate are included. You'll stay alongside fellow participants in a secluded setting.",
+      'SALAD focuses on live, teacher-led classes because speaking practice, correction, and confidence grow fastest through real interaction. Self-study support can complement the live lessons.',
   },
   {
-    question: 'What language is the workshop conducted in?',
+    question: 'How large are the classes?',
     answer:
-      'The workshop is conducted in English, with Italian culinary terminology integrated naturally throughout.',
+      'Most classes are kept small so learners have time to speak, ask questions, and receive feedback. Group size can vary by program, level, and schedule.',
   },
   {
-    question: 'How does the application process work?',
+    question: 'Can SALAD support teams or organizations?',
     answer:
-      'Submit your application through the form below. We review each application to ensure alignment with the experience. Approved applicants receive pricing and availability details.',
+      'Yes. SALAD can support workplace language training, public-sector learners, and organization-specific goals with programs shaped around level, schedule, and communication needs.',
   },
   {
-    question: 'Can I attend with a partner or team member?',
+    question: 'What happens after I contact SALAD?',
     answer:
-      'Yes, you can indicate this in your application. We accommodate pairs when possible, subject to availability.',
+      'We review your goals, recommend a placement path, and help match you with the right class format, teacher, and schedule before you begin.',
   },
 ] as const;

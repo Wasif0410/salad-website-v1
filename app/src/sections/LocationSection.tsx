@@ -1,76 +1,134 @@
-export default function LocationSection() {
-  const lowerImages = [
-    {
-      src: '/images/location-1.jpg',
-      alt: 'Tuscan estate at sunrise',
-      className: 'md:col-span-1',
-    },
-    {
-      src: '/images/location-2.jpg',
-      alt: 'Tuscan vineyards around the estate',
-      className: 'md:col-span-1',
-    },
-  ];
+const levels = [
+  {
+    code: 'A1',
+    name: 'Beginner',
+    description: 'Build foundations for everyday situations.',
+  },
+  {
+    code: 'A2',
+    name: 'Elementary',
+    description: 'Expand vocabulary and simple conversations.',
+  },
+  {
+    code: 'B1',
+    name: 'Intermediate',
+    description: 'Express ideas and talk about experiences.',
+  },
+  {
+    code: 'B2',
+    name: 'Upper Intermediate',
+    description: 'Communicate in complex discussions.',
+  },
+  {
+    code: 'C1',
+    name: 'Advanced',
+    description: 'Use French fluently and effectively.',
+  },
+  {
+    code: 'C2',
+    name: 'Proficient',
+    description: 'Master nuance, precision, and culture.',
+  },
+] as const;
 
+const progressFeatures = [
+  {
+    title: 'Milestones',
+    description: 'Clear next steps.',
+  },
+  {
+    title: 'CEFR',
+    description: 'Recognized curriculum.',
+  },
+  {
+    title: 'Progress',
+    description: 'Visible growth.',
+  },
+  {
+    title: 'Teachers',
+    description: 'Expert guidance.',
+  },
+] as const;
+
+export default function LocationSection() {
   return (
     <section
       id="location"
-      className="bg-sage rounded-t-[34px] -mt-8 relative z-10 pt-[134px] pb-[154px]"
+      className="bg-sage rounded-t-[28px] -mt-8 relative z-10 pt-[76px] pb-[84px] md:rounded-t-[34px] md:pt-[112px] md:pb-[110px]"
     >
-      <div className="w-full px-6">
-        {/* Section Header */}
-        <div className="text-center mb-[70px]">
-          <h2 className="font-display italic text-text-primary text-[54px] leading-none">
-            Set in the Heart of Tuscany
-          </h2>
-          <p className="mt-4 text-text-muted text-[18px] leading-[25.2px]">
-            Where tradition, land, and craft intersect.
-          </p>
-        </div>
-
-        {/* Main Content */}
-        <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-[minmax(0,925px)_450px] justify-center gap-6">
-          {/* Large Image */}
-          <div
-            className="w-full rounded-[6px] overflow-hidden"
-          >
-            <img
-              src="/images/location-main.jpg"
-              alt="Tuscan estate aerial view"
-              className="w-full h-[360px] object-cover"
-            />
-          </div>
-
-          {/* Text Card */}
-          <div
-            className="w-full bg-sage-dark/70 rounded-[6px] p-8 flex flex-col justify-center"
-          >
-            <h3 className="font-display text-text-primary text-[30px] leading-[38px]">
-              The masterclass takes place in a private Tuscan estate.
-            </h3>
-            <p className="mt-4 text-text-secondary text-[18px] leading-[25.2px]">
-              This location is surrounded by olive groves and vineyards, far
-              from tourist routes and distractions. The climate, ingredients,
-              and pace of life here are essential to understanding the craft.
-              Exact location details are shared after your application is
-              approved.
+      <div className="w-full px-5 md:px-6">
+        <div className="max-w-[1400px] mx-auto">
+          <div className="text-center mb-9 md:mb-12">
+            <h2 className="font-display italic text-text-primary text-[40px] leading-[0.98] md:text-[64px]">
+              Your French Journey, Step by Step
+            </h2>
+            <p className="mt-4 text-text-muted text-[16px] leading-[23px] md:mt-5 md:text-[20px] md:leading-7">
+              From first words to confident conversation with clarity and
+              support at every level.
             </p>
           </div>
-        </div>
 
-        <div className="max-w-[1400px] mx-auto mt-6 grid grid-cols-1 md:grid-cols-[452px_minmax(0,924px)] gap-6">
-          {lowerImages.map((image) => (
-            <div
-              key={image.src}
-              className={`h-[315px] rounded-[6px] overflow-hidden ${image.className}`}
-            >
-              <img
-                src={image.src}
-                alt={image.alt}
-                className="w-full h-full object-cover"
-              />
+          <div
+            data-location-top-grid
+            className="grid grid-cols-1 lg:grid-cols-12 gap-6"
+          >
+            <div className="lg:col-span-5 bg-dark rounded-[8px] p-6 min-h-[300px] flex flex-col justify-center md:min-h-[356px] md:p-10">
+              <h3 className="font-display text-cream text-[31px] leading-[35px] md:text-[42px] md:leading-[46px] max-w-[460px]">
+                Progress that feels visible, calm, and guided.
+              </h3>
+              <p className="mt-5 text-cream text-[16px] leading-[23px] md:mt-6 md:text-[20px] md:leading-[28px] max-w-[470px]">
+                Each level gives learners a clear target, practical outcomes,
+                and the confidence to keep moving without guessing what comes
+                next.
+              </p>
             </div>
-          ))}
+
+            <div className="lg:col-span-7 bg-sage-dark/70 rounded-[8px] p-4 min-h-[356px] grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-4 md:p-8">
+              {levels.map((level) => (
+                <article
+                  key={level.code}
+                  className="bg-sage rounded-[7px] border border-dark/5 p-4 min-h-[136px] flex flex-col md:min-h-[142px] md:p-6"
+                >
+                  <h3 className="font-display text-text-primary text-[30px] leading-none md:text-[34px]">
+                    {level.code}
+                  </h3>
+                  <p className="mt-2 text-text-primary text-[15px] leading-5">
+                    {level.name}
+                  </p>
+                  <p className="mt-2.5 text-text-secondary text-[13px] leading-[18px] md:mt-3 md:text-[14px] md:leading-[19px]">
+                    {level.description}
+                  </p>
+                </article>
+              ))}
+            </div>
+          </div>
+
+          <div
+            data-location-bottom-grid
+            className="mt-6 grid grid-cols-1 lg:grid-cols-12 gap-6"
+          >
+            <div className="lg:col-span-3 bg-dark rounded-[8px] p-6 md:p-7 min-h-[118px] flex items-center">
+              <h3 className="font-display text-cream text-[30px] leading-[34px] md:text-[34px] md:leading-[38px]">
+                Explore the Learning Path
+              </h3>
+            </div>
+
+            <div className="lg:col-span-9 grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
+              {progressFeatures.map((feature) => (
+                <article
+                  key={feature.title}
+                  className="bg-sage-dark/70 rounded-[8px] p-5 min-h-[112px] md:min-h-[118px] md:p-6"
+                >
+                  <h3 className="font-display text-text-primary text-[25px] leading-none md:text-[28px]">
+                    {feature.title}
+                  </h3>
+                  <p className="mt-3 text-text-secondary text-[15px] leading-5">
+                    {feature.description}
+                  </p>
+                </article>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>

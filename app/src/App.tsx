@@ -1,44 +1,39 @@
 import { useLenis } from './hooks/useLenis';
-import Navbar from './sections/Navbar';
-import HeroSection from './sections/HeroSection';
-import IntroSection from './sections/IntroSection';
-import ExperiencesSection from './sections/ExperiencesSection';
-import HostSection from './sections/HostSection';
-import WorkshopGallery from './sections/WorkshopGallery';
-import WhatsIncludedSection from './sections/WhatsIncludedSection';
-import LocationSection from './sections/LocationSection';
-import TestimonialsSection from './sections/TestimonialsSection';
-import FAQSection from './sections/FAQSection';
-import ApplySection from './sections/ApplySection';
-import Footer from './sections/Footer';
-import FloatingCTA from './components/FloatingCTA';
-import OverlayScrollStack from './components/animations/OverlayScrollStack';
+import { HashRouter, Navigate, Route, Routes } from 'react-router';
+import Navbar from './components/layout/Navbar';
+import Footer from './components/layout/Footer';
+import ScrollToTop from './components/layout/ScrollToTop';
+import Home from './pages/Home';
+import Training from './pages/Training';
+import LanguageCourses from './pages/LanguageCourses';
+import CourseDetail from './pages/CourseDetail';
+import Team from './pages/Team';
+import Materials from './pages/Materials';
+import About from './pages/About';
+import Assessment from './pages/Assessment';
 
 function App() {
   useLenis();
 
   return (
-    <div className="relative">
-      <Navbar />
-      <main>
-        <HeroSection />
-        <OverlayScrollStack
-          base={<IntroSection />}
-          overlay={<ExperiencesSection />}
-        />
-        <HostSection />
-        <OverlayScrollStack
-          base={<WorkshopGallery />}
-          overlay={<WhatsIncludedSection />}
-        />
-        <LocationSection />
-        <TestimonialsSection />
-        <FAQSection />
-        <ApplySection />
-      </main>
-      <Footer />
-      <FloatingCTA />
-    </div>
+    <HashRouter>
+      <div className="relative">
+        <ScrollToTop />
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/training" element={<Training />} />
+          <Route path="/training/:languageId" element={<LanguageCourses />} />
+          <Route path="/courses/:courseId" element={<CourseDetail />} />
+          <Route path="/team" element={<Team />} />
+          <Route path="/materials" element={<Materials />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/assessment" element={<Assessment />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+        <Footer />
+      </div>
+    </HashRouter>
   );
 }
 

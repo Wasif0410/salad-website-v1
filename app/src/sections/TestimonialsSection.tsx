@@ -50,13 +50,13 @@ export default function TestimonialsSection() {
   const carouselItems = [...testimonials, ...testimonials, ...testimonials];
 
   return (
-    <section id="participants" className="bg-sage pt-[118px] pb-[170px] overflow-hidden">
+    <section id="participants" className="bg-sage pt-[84px] pb-[112px] overflow-hidden md:pt-[118px] md:pb-[170px]">
       <div className="section-container">
-        <div className="text-center mb-[42px]">
-          <h2 className="font-display italic text-text-primary text-[54px] leading-none">
+        <div className="text-center mb-[34px] md:mb-[42px]">
+          <h2 className="font-display italic text-text-primary text-[42px] leading-[0.98] md:text-[54px] md:leading-none">
             From Past Participants
           </h2>
-          <p className="mt-4 text-text-muted text-[18px] leading-[25.2px]">
+          <p className="mt-4 text-text-muted text-[16px] leading-[23px] md:text-[18px] md:leading-[25.2px]">
             Reflections from those who've been inside the experience.
           </p>
         </div>
@@ -72,20 +72,20 @@ export default function TestimonialsSection() {
           {carouselItems.map((testimonial, index) => (
             <div
               key={`${testimonial.name}-${index}`}
-              className="bg-dark rounded-[7px] p-[26px] text-cream flex flex-col h-[322px] w-[383px] shrink-0"
+              className="bg-dark rounded-[7px] p-5 text-cream flex flex-col h-[300px] w-[min(82vw,383px)] shrink-0 md:h-[322px] md:w-[383px] md:p-[26px]"
             >
               <StarRating />
-              <p className="mt-7 text-[20px] leading-[27px] flex-grow text-cream-dark">
+              <p className="mt-6 text-[18px] leading-[25px] flex-grow text-cream-dark md:mt-7 md:text-[20px] md:leading-[27px]">
                 {testimonial.quote}
               </p>
-              <div className="flex items-center gap-4 mt-6 pt-6 border-t border-cream/10">
+              <div className="flex items-center gap-3 mt-5 pt-5 border-t border-cream/10 md:gap-4 md:mt-6 md:pt-6">
                 <img
                   src={testimonial.avatar}
                   alt={testimonial.name}
-                  className="w-[72px] h-[72px] rounded-[7px] object-cover"
+                  className="w-[58px] h-[58px] rounded-[7px] object-cover md:h-[72px] md:w-[72px]"
                 />
                 <div>
-                  <p className="text-[22px] leading-none font-display">{testimonial.name}</p>
+                  <p className="text-[20px] leading-none font-display md:text-[22px]">{testimonial.name}</p>
                   <p className="mt-2 text-[15px] text-cream-dark">
                     {testimonial.role}
                   </p>
