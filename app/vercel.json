@@ -2,7 +2,7 @@
   "framework": "vite",
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
-  "installCommand": "npm ci",
+  "installCommand": "npm install -g npm@10.9.2 && npm ci",
   "rewrites": [
     {
       "source": "/(.*)",
